@@ -70,10 +70,6 @@ ob_start();
                     $result = $conn->query($sql);
                 }
                 ?>
-                <?php
-                $sql = "SELECT * from tbl_player";
-                $result = $conn->query($sql);
-                ?>
 
                 <form action="#" method="GET">
                     <div class="register">
@@ -152,11 +148,6 @@ ob_start();
                     </div>
 
                 </form>
-                <?php
-                if ($result->num_rows > 0) {
-
-
-                    ?>
                 </div>
                 <div class="feed">
                     <table>
@@ -175,7 +166,7 @@ ob_start();
                         </tr>
 
                         <?php
-                        while ($row = $result->fetch_assoc()) {
+                        foreach ($result as $row) {
 
 
                             ?>
@@ -224,9 +215,6 @@ ob_start();
                     </table>
 
                 </div>
-                <?php
-                }
-                ?>
         </div>
         <div class="footer">
             <p>&copy;SFU eSports Community.All rights reserved 2024</p>
