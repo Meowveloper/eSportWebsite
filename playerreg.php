@@ -66,8 +66,8 @@ ob_start();
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
                 } else {
-                    $sql = "SELECT * FROM tbl_player";
-                    $result = $conn->query($sql);
+                    // $sql = "SELECT * FROM tbl_player";
+                    // $result = $conn->query($sql);
                 }
                 ?>
 
@@ -166,6 +166,7 @@ ob_start();
                         </tr>
 
                         <?php
+                        require_once './Models/Player.php';
                         foreach ($result as $row) {
 
 
